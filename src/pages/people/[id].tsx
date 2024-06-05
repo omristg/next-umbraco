@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import Image from "next/image";
-import { getImageUrl } from ".";
+import { getImageUrl } from "@/global/utils";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { Person } from "@/Models/person.model";
 import type { ApiItemWrapper } from "@/Models/umbraco.model";

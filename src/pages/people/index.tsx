@@ -3,11 +3,10 @@ import styled from "styled-components";
 import Image from "next/image";
 import Link from "next/link";
 import { contentApi } from "@/clientApi/method";
-import { BASE_URL } from "@/clientApi/client";
+import { getImageUrl } from "@/global/utils";
 import type { Person } from "@/Models/person.model";
 import type { ApiListWrapper } from "@/Models/umbraco.model";
 
-export const getImageUrl = (path: string) => BASE_URL + path;
 
 type Props = {
 	peopleWrapper: ApiListWrapper<Person>;
