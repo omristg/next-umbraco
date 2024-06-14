@@ -1,12 +1,13 @@
 import * as React from "react";
 import styled from "styled-components";
 import { contentApi } from "@/clientApi/method";
-import type { Product } from "@/Models/product.model";
-import type { ApiListWrapper } from "@/Models/umbraco.model";
-import type { GetStaticProps } from "next";
 import { getImageUrl } from "@/global/utils";
 import Image from "next/image";
 import Link from "next/link";
+import Login from "@/Components/_login";
+import type { Product } from "@/Models/product.model";
+import type { ApiListWrapper } from "@/Models/umbraco.model";
+import type { GetStaticProps } from "next";
 
 type Props = {
 	productsWrapper: ApiListWrapper<Product>;
@@ -15,6 +16,7 @@ type Props = {
 const Products = ({ productsWrapper }: Props) => {
 	return (
 		<Container>
+			<Login />
 			<h1>Products</h1>
 			<ul>
 				{productsWrapper.items.map((productWrapper) => {

@@ -9,7 +9,7 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "localhost",
-				port: "44398",
+				port: "44393",
 				pathname: "/media/**",
 			},
 		],

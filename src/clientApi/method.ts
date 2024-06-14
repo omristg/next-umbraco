@@ -1,5 +1,5 @@
 import * as Transform from "@/clientApi/transform";
-import { contentClient } from "./client";
+import { authClient, contentClient } from "./client";
 import type { ApiItemWrapper, ApiListWrapper } from "@/Models/umbraco.model";
 import type { Product } from "@/Models/product.model";
 import type { Person } from "@/Models/person.model";
@@ -20,7 +20,7 @@ export const contentApi = {
 		contentClient
 			.get<ApiListWrapper<Product>>("/", {
 				params: {
-					fetch: "children:ec4aafcc-0c25-4f25-a8fe-705bfae1d324",
+					fetch: "children:products",
 					take: 100,
 				},
 			})
@@ -29,4 +29,14 @@ export const contentApi = {
 		contentClient
 			.get<ApiItemWrapper<Product>>("/item/" + id)
 			.then(Transform.transformData),
+};
+
+export const authApi = {
+	login: async (email: string, password: string) =>
+		authClient
+			.post<any>("/login", { email, password })
+			.then(Transform.transformData),
+	logout: async () => authClient.post("/logout").then(Transform.transformData),
+	testLogin: async () =>
+		authClient.get("/CheckLoggedInMember").then(Transform.transformData),
 };
