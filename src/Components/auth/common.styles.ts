@@ -24,10 +24,10 @@ export const MutedLink = styled.a`
 
 export const BoldLink = styled.a`
 	font-size: 12px;
-	color: rgba(241, 196, 15, 1);
+	color: #12b3f3;
 	font-weight: 500;
 	text-decoration: none;
-	border-bottom: 1px dashed rgba(241, 196, 15, 1);
+	border-bottom: 1px dashed #12b3f3;
 `;
 
 export const Input = styled.input`
@@ -46,7 +46,7 @@ export const Input = styled.input`
 
 	&:focus {
 		outline: none;
-		border-bottom: 1px solid rgba(241, 196, 15, 1);
+		border-bottom: 1px solid #12b3f3;
 	}
 `;
 
@@ -61,11 +61,7 @@ export const SubmitButton = styled.button`
 	border-radius: 100px;
 	cursor: pointer;
 	transition: all 240ms ease-in-out;
-	background: linear-gradient(
-		58deg,
-		rgba(243, 172, 18, 1) 20%,
-		rgba(241, 196, 15, 1) 100%
-	);
+	background: linear-gradient(58deg, #12b3f3 20%, #0f78f1 100%);
 
 	&:hover {
 		filter: brightness(1.03);
