@@ -5,21 +5,24 @@ import { useRouter } from "next/router";
 
 type Props = React.PropsWithChildren<{}>;
 
-const routes = [
-	{
-		displayName: "Products",
-		route: "/products",
-	},
-	{
-		displayName: "People",
-		route: "/people",
-	},
-];
-
 const Layout = ({ children }: Props) => {
 	const { pathname } = useRouter();
-
 	const isActive = (path: string) => pathname === path;
+
+	const routes = [
+		{
+			displayName: "Products",
+			route: "/products",
+		},
+		{
+			displayName: "People",
+			route: "/people",
+		},
+		{
+			displayName: "Auth",
+			route: "/auth",
+		},
+	];
 
 	return (
 		<Container>
@@ -67,7 +70,6 @@ const Container = styled.div.attrs({ className: "layout-container" })`
 	.layout-container {
 		padding-inline: var(--layout-padding);
 	}
-	
 `;
 
 export default Layout;
