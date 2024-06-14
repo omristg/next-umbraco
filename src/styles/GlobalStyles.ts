@@ -1,7 +1,14 @@
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+:root {
+	--layout-padding: 2rem;
+}
+
 html {
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 body {
@@ -181,3 +188,5 @@ a {
 	scrollbar-width: thin; /* Thin scrollbar width */
 	scrollbar-color: #888 #f1f1f1; /* Color of the thumb and track */
 }
+
+`;
