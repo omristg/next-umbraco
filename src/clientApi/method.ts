@@ -3,6 +3,7 @@ import { authClient, contentClient } from "./client";
 import type { ApiItemWrapper, ApiListWrapper } from "@/Models/umbraco.model";
 import type { Product } from "@/Models/product.model";
 import type { Person } from "@/Models/person.model";
+import type * as Params from "@/clientApi/params";
 
 export const contentApi = {
 	getPeople: async () =>
@@ -39,4 +40,10 @@ export const authApi = {
 	logout: async () => authClient.post("/logout").then(Transform.transformData),
 	testLogin: async () =>
 		authClient.get("/CheckLoggedInMember").then(Transform.transformData),
+	resetPassword: async ({ email, newPassword, token }: Params.ResetPassword) =>
+		authClient
+			.post("/resetPassword", { email, newPassword, token })
+			.then(Transform.transformData),
+	forgotPassword: async (email: string) =>
+		authClient.post("/forgotPassword", { email }).then(Transform.transformData),
 };

@@ -3,12 +3,17 @@ import { loginDispatch, useAuth } from "@/context/authContext";
 import { AxiosError } from "axios";
 import { useMutation } from "react-query";
 
-const useLogin = (email: string, password: string) => {
+type LoginParams = {
+	email: string;
+	password: string;
+};
+
+const useLogin = () => {
 	const { dispatch } = useAuth();
 
 	const { mutate: login } = useMutation(
 		"login",
-		() => authApi.login(email, password),
+		({ email, password }: LoginParams) => authApi.login(email, password),
 		{
 			onSuccess: () => {
 				dispatch(loginDispatch({ email: "omristg@gmail.com", name: "test" }));

@@ -1,19 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
-import useLogin from "@/hooks/useLogin";
 import { motion } from "framer-motion";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./registerForm";
 
 const LoginOrRegister = () => {
-	const [email, setEmail] = React.useState("");
-	const [password, setPassword] = React.useState("");
-
-	const { login } = useLogin(email, password);
-	const onSubmit = (e: React.FormEvent) => {
-		e.preventDefault();
-		login();
-	};
 	const [isExpanded, setExpanded] = React.useState(false);
 	const [isRegister, setIsRegister] = React.useState(false);
 
@@ -77,7 +68,7 @@ const Container = styled.div.attrs({ className: "auth-container" })`
 `;
 
 const BoxContainer = styled.div`
-	width: 280px;
+	width: 350px;
 	min-height: 550px;
 	display: flex;
 	flex-direction: column;
@@ -118,7 +109,7 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderText = styled.div`
-	font-size: 30px;
+	font-size: 34px;
 	font-weight: 600;
 	line-height: 1.24;
 	color: #fff;
@@ -126,7 +117,7 @@ const HeaderText = styled.div`
 `;
 
 const SmallText = styled.div`
-	font-size: 11px;
+	font-size: 14px;
 	font-weight: 500;
 	color: #fff;
 	margin-top: 7px;
@@ -148,7 +139,7 @@ const backdropVariants = {
 		transform: "rotate(60deg)",
 	},
 	collapsed: {
-		width: "160%",
+		width: "123%",
 		height: "550px",
 		borderRadius: "50%",
 		transform: "rotate(60deg)",
