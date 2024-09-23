@@ -1,5 +1,5 @@
 import { authApi } from "@/clientApi/method";
-import { loginDispatch, useAuth } from "@/context/authContext";
+import { loginDispatch, useAuthContext } from "@/context/authContext";
 import { AxiosError } from "axios";
 import { useMutation } from "react-query";
 
@@ -9,7 +9,7 @@ type LoginParams = {
 };
 
 const useLogin = () => {
-	const { dispatch } = useAuth();
+	const { dispatch } = useAuthContext();
 
 	const { mutate: login } = useMutation(
 		"login",

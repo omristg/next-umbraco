@@ -1,10 +1,10 @@
 import LoginOrRegister from "@/Components/auth/loginOrRegister";
-import { useAuth, logoutDispatch } from "@/context/authContext";
+import { useAuthContext, logoutDispatch } from "@/context/authContext";
 import * as React from "react";
 import styled from "styled-components";
 
 const AuthPage = () => {
-	const { isLoggedIn, dispatch } = useAuth();
+	const { isLoggedIn, dispatch } = useAuthContext();
 
 	const logout = () => dispatch(logoutDispatch());
 

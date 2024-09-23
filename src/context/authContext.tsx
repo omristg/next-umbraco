@@ -41,7 +41,7 @@ const authReducer = (state: AuthState, action: AuthAction): AuthState => {
 	}
 };
 
-export const useAuth = () => React.useContext(AuthContext);
+export const useAuthContext = () => React.useContext(AuthContext);
 export const logoutDispatch = (): AuthAction => ({
 	type: "LOGOUT",
 	payload: null,

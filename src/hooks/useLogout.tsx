@@ -1,9 +1,9 @@
 import { authApi } from "@/clientApi/method";
-import { logoutDispatch, useAuth } from "@/context/authContext";
+import { logoutDispatch, useAuthContext } from "@/context/authContext";
 import { useMutation } from "react-query";
 
 const useLogout = () => {
-	const { dispatch } = useAuth();
+	const { dispatch } = useAuthContext();
 
 	const { mutate: logout } = useMutation(authApi.logout, {
 		onSuccess: () => {

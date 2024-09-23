@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import LoginForm from "./LoginForm";
-import RegisterForm from "./registerForm";
+import LoginForm from "@/Components/auth/loginForm";
+import RegisterForm from "@/Components/auth/registerForm";
 
 const LoginOrRegister = () => {
 	const [isExpanded, setExpanded] = React.useState(false);
